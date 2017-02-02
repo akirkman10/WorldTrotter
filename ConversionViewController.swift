@@ -22,20 +22,29 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
       super.viewDidLoad()
       updateCelsiusLabel()
    }
-   func textField(_ textField: UITextField,
-                  shouldChangeCharactersIn range: NSRange,
-                  replacementString string: String) -> Bool {
-     
+
+   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
       let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
       let replacementTextHasDecimalSeparator = string.range(of: ".")
       
+      //Restricts user from entering multiple decimal points
       if existingTextHasDecimalSeparator != nil,
          replacementTextHasDecimalSeparator != nil {
          return false
-      } else {
+      }
+      
+      //User hasn't entered text returns true
+      if string.characters.isEmpty {
          return true
       }
+      //Disallows user from entering non-numeric characters
+      if let _ = string.rangeOfCharacter(from: NSCharacterSet(charactersIn: "-0123456789.").inverted as CharacterSet){
+         return false
+      }
+      
+      return true
    }
+
    
    @IBOutlet var celsiusLabel: UILabel!
    var fahrenheitValue: Measurement < UnitTemperature >?{
