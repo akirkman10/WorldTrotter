@@ -20,6 +20,9 @@ let numberFormatter: NumberFormatter = {
 class ConversionViewController: UIViewController, UITextFieldDelegate{
    override func viewDidLoad() {
       super.viewDidLoad()
+      
+      print("ConversionViewController loaded its view.")
+
       updateCelsiusLabel()
    }
 
@@ -38,7 +41,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
          return true
       }
       //Disallows user from entering non-numeric characters
-      if let _ = string.rangeOfCharacter(from: NSCharacterSet(charactersIn: "-0123456789.").inverted as CharacterSet){
+      if string.rangeOfCharacter(from: NSCharacterSet(charactersIn: "-0123456789.").inverted as CharacterSet) != nil{
          return false
       }
       
