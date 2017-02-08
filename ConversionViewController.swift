@@ -94,6 +94,20 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
       textField.resignFirstResponder()
    }
+   //Silver Challenge: Dark Mode
+   override func viewWillAppear(_ animated: Bool) {
+      var hour: Int?
+      let currentDate = NSDate()
+      let dateFormatter = DateFormatter()
+      dateFormatter.locale = NSLocale.current
+      dateFormatter.dateFormat = "HH"
+      hour = Int(dateFormatter.string(from: currentDate as Date))
+      if hour! < 7 || hour! > 19 {
+         view.backgroundColor = UIColor.gray
+      } else {
+         view.backgroundColor = UIColor.cyan
+      }
+   }
    
    
 }
