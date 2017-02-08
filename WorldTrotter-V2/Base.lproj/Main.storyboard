@@ -111,7 +111,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KLF-IP-GXl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1824.8" y="139.880059970015"/>
+            <point key="canvasLocation" x="1670" y="485"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="q0C-Ot-8Oh">
+            <objects>
+                <viewController id="xFg-fw-KXy" customClass="WebViewController" customModule="WorldTrotter_V2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Web" id="1MF-cy-1GH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIr-q6-FhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670" y="-174"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="X7X-o6-k76">
@@ -126,6 +136,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Msb-Fv-1wa"/>
                         <segue destination="NB7-uE-M82" kind="relationship" relationship="viewControllers" id="aln-eg-KuQ"/>
+                        <segue destination="xFg-fw-KXy" kind="relationship" relationship="viewControllers" id="RoL-Hg-MKS"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgs-xi-klP" userLabel="First Responder" sceneMemberID="firstResponder"/>
