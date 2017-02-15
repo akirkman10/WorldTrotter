@@ -94,6 +94,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
       textField.resignFirstResponder()
    }
+   
    //Silver Challenge: Dark Mode
    override func viewWillAppear(_ animated: Bool) {
       var hour: Int?
